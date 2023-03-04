@@ -12,5 +12,3 @@ public interface WeatherControllerAPI {
     @GetMapping("/location/{locationQueryString}")
     ResponseEntity<Location> searchForLocation(@PathVariable String locationQueryString);
 }
-
-
