@@ -3,8 +3,8 @@ package pl.ksiezak.adrian.java.googleApi.service;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import lombok.RequiredArgsConstructor;
 import org.json.JSONException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -19,11 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class LocationService {
     private RestClient restClient;
 
-    @Autowired
-    private LocationRepository locationRepository;
+    private final LocationRepository locationRepository;
 
     @Value("${google.maps.api.url}")
     private String googleMapsApiUrl;

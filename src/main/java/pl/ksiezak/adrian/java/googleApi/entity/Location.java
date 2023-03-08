@@ -1,6 +1,8 @@
 package pl.ksiezak.adrian.java.googleApi.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Table(name = "locations")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Location {
 
     @Id
@@ -23,9 +27,6 @@ public class Location {
 
     @Column(nullable = false)
     private double longitude;
-
-    public Location() {
-    }
 
     public Location(String queryString, double latitude, double longitude) {
         this.queryString = queryString;
