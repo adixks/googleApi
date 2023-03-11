@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.ksiezak.adrian.java.googleApi.entity.Location;
 
+import javax.validation.Valid;
+
 @RequestMapping(value = "/api/weather", produces = MediaType.APPLICATION_JSON_VALUE)
 public interface WeatherControllerAPI {
     @GetMapping("/location/{locationQueryString}")
-    ResponseEntity<Location> searchForLocation(@PathVariable String locationQueryString);
+    ResponseEntity<Location> searchForLocation(@PathVariable @Valid String locationQueryString);
 }
